@@ -1,6 +1,7 @@
 package com.example.sbjpacreditcard.repository;
 
 import com.example.sbjpacreditcard.domain.CreditCard;
+import com.example.sbjpacreditcard.services.EncryptionService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -20,6 +21,8 @@ class CreditCarsRepositoryTest {
     @Autowired
     private CreditCarsRepository creditCarsRepository;
 
+    @Autowired
+    private EncryptionService encryptionService;
     @Test
     void workCreditCarsRepositoryTest() {
         CreditCard creditCard = new CreditCard();
