@@ -7,13 +7,13 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
-@Configuration
+//@Configuration
 public class InterceptorRegistration implements HibernatePropertiesCustomizer {
-    @Autowired
-    private EncryptInterceptor encryptInterceptor;
+//    @Autowired
+//    private EncryptInterceptor encryptInterceptor;
 
     @Override
     public void customize(Map<String, Object> hibernateProperties) {
-        hibernateProperties.put("hibernate.session_factory.interceptor", encryptInterceptor);
+//        hibernateProperties.put("hibernate.session_factory.interceptor", encryptInterceptor);
     }
 }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Service
+//@Service
 public class EncryptInterceptor implements Interceptor {
     private final EncryptionService encryptionService;
 
@@ -23,7 +23,7 @@ public class EncryptInterceptor implements Interceptor {
     @Override
     public boolean onLoad(Object entity, Object id, Object[] state, String[] propertyNames, Type[] types) throws CallbackException {
         Object[] newState = processFields(entity, state, propertyNames, "onLoad");
-        return Interceptor.super.onLoad(entity, id, state, propertyNames, types);
+        return Interceptor.super.onLoad(entity, id, newState, propertyNames, types);
     }
 
     @Override
