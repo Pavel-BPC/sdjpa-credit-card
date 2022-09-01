@@ -1,6 +1,7 @@
 package com.example.sbjpacreditcard.domain;
 
 
+import com.example.sbjpacreditcard.interseptors.EncryptedString;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.CreditCardNumber;
 
 @Entity
 @Getter
@@ -23,6 +23,7 @@ public class CreditCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @EncryptedString
     @Size(max = 20)
     private String creditCardNumber;
     @Size(max = 4)
