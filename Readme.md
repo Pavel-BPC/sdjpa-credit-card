@@ -1,0 +1,1 @@
+This project provides examples of:  Hibernate Interceptor, Hibernate Listeners, JPA Callback and  JPA Converters
