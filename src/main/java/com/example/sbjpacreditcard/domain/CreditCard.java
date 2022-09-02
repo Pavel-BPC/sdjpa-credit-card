@@ -14,14 +14,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EntityListeners(CreditCardJpaCallback.class)
+//@EntityListeners(CreditCardJpaCallback.class)
 public class CreditCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @EncryptedString
+    //    @EncryptedString
+    @Convert(converter = CreditCardConverter.class)
     @Size(max = 20)
     private String creditCardNumber;
     @Size(max = 4)
