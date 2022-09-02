@@ -2,10 +2,7 @@ package com.example.sbjpacreditcard.domain;
 
 
 import com.example.sbjpacreditcard.interseptors.EncryptedString;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +14,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EntityListeners(CreditCardJpaCallback.class)
 public class CreditCard {
 
     @Id
@@ -30,4 +28,9 @@ public class CreditCard {
     private String cvv;
     @Size(max = 7)
     private String expirationDate;
+
+//    @PrePersist
+//    public void prePersistCallback(){
+//        System.out.println("pre Persist Call back");
+//    }
 }

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class ListenerRegistration implements BeanPostProcessor {
 
     private final PostLoadListener postLoadListener;
@@ -31,16 +31,16 @@ public class ListenerRegistration implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof LocalContainerEntityManagerFactoryBean) {
-            LocalContainerEntityManagerFactoryBean lcemf = (LocalContainerEntityManagerFactoryBean) bean;
-            SessionFactoryImpl sessionFactory = (SessionFactoryImpl) lcemf.getNativeEntityManagerFactory();
-            EventListenerRegistry service = sessionFactory.getServiceRegistry().getService(EventListenerRegistry.class);
-
-            service.appendListeners(EventType.POST_LOAD, postLoadListener);
-            service.appendListeners(EventType.PRE_INSERT, preInsertListeners);
-            service.appendListeners(EventType.PRE_UPDATE, preUpdateListener);
-
-        }
+//        if (bean instanceof LocalContainerEntityManagerFactoryBean) {
+//            LocalContainerEntityManagerFactoryBean lcemf = (LocalContainerEntityManagerFactoryBean) bean;
+//            SessionFactoryImpl sessionFactory = (SessionFactoryImpl) lcemf.getNativeEntityManagerFactory();
+//            EventListenerRegistry service = sessionFactory.getServiceRegistry().getService(EventListenerRegistry.class);
+//
+//            service.appendListeners(EventType.POST_LOAD, postLoadListener);
+//            service.appendListeners(EventType.PRE_INSERT, preInsertListeners);
+//            service.appendListeners(EventType.PRE_UPDATE, preUpdateListener);
+//
+//        }
 
 
         return bean;
