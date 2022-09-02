@@ -1,1 +1,6 @@
-This project provides examples of:  Hibernate Interceptor, Hibernate Listeners, JPA Callback and  JPA Converters
+This project provides examples of:
+
+* Hibernate Interceptor
+* Hibernate Listeners
+* JPA Callback
+* JPA Converters
